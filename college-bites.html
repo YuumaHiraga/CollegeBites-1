@@ -160,6 +160,10 @@
        let shopPopularity = filteredByCity[i].review_count;
        let address = filteredByCity[i].address;
        let city = filteredByCity[i].city;
+       let businessID = filteredByCity[i].business_id;
+       let photoID = "k-z5bDcuLgsNAmYs2NUiPQ";
+
+       let imageURL = "https://s3-media0.fl.yelpcdn.com/bphoto/" + photoID + "/348s.jpg"
 
        let hours = {}; 
        let hourTxt = "";
@@ -172,9 +176,11 @@
        
         result += '<div class="box"><h2 class="shopName" style="color:'+h2_color+';">' + (i + 1) + '. ' +
           shopName +'</h2><table style="width:70%"><tr>' + 
-          '<td style="width:70%"><p><b>Rating: </b><img src="app/images/'+ shopRating +'s.png" width="110px"></img></p><p><b>Review Count: </b>' + shopPopularity + 
-          '</p><p><b>Address: </b> '+ address + ', ' + city + '</p></td><td><b>Hours:</b><br> ' + hourTxt 
-          +'</p></td></tr></table></div>';
+          '<td style="width:70%"><p><b>Rating: </b><img src="app/images/'+ shopRating +
+            's.png" width="110px"></img></p><p><b>Review Count: </b>' + shopPopularity + 
+          '</p><p><b>Address: </b> '+ address + ', ' + city + '</p></td><td style="width:100%"><b>Hours:</b><br> ' + hourTxt 
+          +'</p></td><td><img src="'+ imageURL +
+            '" width="200px"></img></td></tr></table></div>';
             
       document.getElementById("result").innerHTML = result;
       }
